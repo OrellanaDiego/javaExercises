@@ -1,0 +1,26 @@
+import javax.swing.*;
+import java.util.Random;
+
+public class example {
+    public static void main(String[] args) {
+        int contador = 0;
+        float calificacion = 0, suma = 0, promedio;
+        String texto;
+
+        do {
+            texto = JOptionPane.showInputDialog("Ingresa la calificiación del semestre " +(contador+1));
+            if ( texto != null ) {
+                calificacion = Float.parseFloat(texto);
+                suma = suma + calificacion;
+                contador++;
+            }
+        } while ( texto != null );
+        if ( contador > 0 ) {
+        promedio = suma/contador;
+        JOptionPane.showMessageDialog(null, "Promedio = " +promedio);
+        } else {
+            JOptionPane.showMessageDialog(null, "Debes ingresar al menos una nota.");
+        }
+
+    }
+}
